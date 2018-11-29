@@ -13,6 +13,7 @@
         <module>cloud-consumer-movie</module>
         <module>cloud-eureka-server</module>
         <module>cloud-eureka-server-ha</module>
+        <module>cloud-eureka-server-authenticating</module>
     </modules>
 
     <name>cloud-service</name>
