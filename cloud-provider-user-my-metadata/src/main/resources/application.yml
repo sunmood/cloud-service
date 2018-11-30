@@ -1,0 +1,48 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    platform: h2                   #指定数据源类型                 #指定数据源
+    url: jdbc:h2:~/test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+#    schema: classpath:schema.sql   #指定h2数据库的建表脚本
+    data: classpath:data.sql    #指定h2数据库的数据脚本
+  application:
+    name: cloud-provider-user #指定注册到Eureka Server上的服务名
+
+logging:                              #配置日志级别，让hibernate打印执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/ #单节点注册
+#      defaultZone: http://peer1:8761/eureka #多节点注册，Eureka节点之间自动同步数据
+      defaultZone: http://user:123@peer1:8761/eureka #需要用户认证的eureka节点
+  instance:
+    prefer-ip-address: true #将IP注册到Eureka Server。如果不配置该属性或将其设置为false，则表示注册微服务所在操作系统的hostname到Eureka Server
+    metadata-map:
+      my-metadata: 我自定义的元数据
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      sourcee: @java.version@
+      target: @java.version@
