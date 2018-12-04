@@ -1,0 +1,19 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: cloud-consumer-movie
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/ #单个eureka
+      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka #配置做个eureka节点。配置一个也可以，eureka之间数据会相互同步
+  instance:
+    prefer-ip-address: true
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      sourcee: @java.version@
+      target: @java.version@
