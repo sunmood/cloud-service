@@ -16,6 +16,7 @@
         <module>cloud-eureka-server-authenticating</module>
         <module>cloud-provider-user-my-metadata</module>
         <module>cloud-consumer-movie-understanding-metadata</module>
+        <module>cloud-consumer-movie-ribbon</module>
     </modules>
 
     <name>cloud-service</name>

@@ -14,11 +14,11 @@ spring:
         web-allow-others: true
   datasource:
     platform: h2                   #指定数据源类型                 #指定数据源
-    url: jdbc:h2:~/test
+    url: jdbc:h2:file:E:/h2data/test
     driver-class-name: org.h2.Driver
     username: sa
     password:
-#    schema: classpath:schema.sql   #指定h2数据库的建表脚本
+    schema: classpath:schema.sql   #指定h2数据库的建表脚本
     data: classpath:data.sql    #指定h2数据库的数据脚本
   application:
     name: cloud-provider-user #指定注册到Eureka Server上的服务名

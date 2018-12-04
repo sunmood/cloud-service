@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8001
 spring:
   jpa:
     generate-ddl: false
@@ -14,7 +14,7 @@ spring:
         web-allow-others: true
   datasource:
     platform: h2                   #指定数据源类型                 #指定数据源
-    url: jdbc:h2:~/test
+    url: jdbc:h2:file:E:/h2data/test1
     driver-class-name: org.h2.Driver
     username: sa
     password:
