@@ -19,6 +19,8 @@
         <module>cloud-consumer-movie-ribbon</module>
         <module>cloud-consumer-movie-ribbon-customizing</module>
         <module>cloud-consumer-movie-ribbon-customizing-properties</module>
+        <module>cloud-consumer-movie-without-eureka</module>
+        <module>cloud-simple-provider-user</module>
     </modules>
 
     <name>cloud-service</name>

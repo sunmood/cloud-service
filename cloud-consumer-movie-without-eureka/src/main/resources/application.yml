@@ -1,0 +1,15 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: cloud-consumer-movie
+cloud-provider-user:
+  ribbon:
+    listOfServers: localhost:8000,localhost:8001 #用于为名为cloud-provider-user的Ribbon客户端设置请求的地址列表
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      sourcee: @java.version@
+      target: @java.version@
